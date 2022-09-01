@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let usuario of listadoUsuarios">
+    <ion-card (click)="verUsuario(usuario.nombre)" >
+      <ion-card-header>
+        <ion-card-title>{{usuario.nombre}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Edad:   {{usuario.edad}}</p>
+        <p>Profesion:   {{usuario.Profesion}}</p>
+        <p>Hobby:   {{usuario.Hobby}}</p>
+        <img src="{{usuario.img}}" alt="Usuario">
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
